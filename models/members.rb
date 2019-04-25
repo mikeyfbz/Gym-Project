@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Member
 
-  attr_reader :id, :first_name, :last_name, :age
+  attr_reader(:id, :first_name, :last_name, :age)
 
   def initialize (options)
     @first_name = options['first_name']
@@ -18,9 +18,21 @@ class Member
     @id = result['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE members SET (first_name, last_name, age) = ($1, $2, $3) WHERE id = $4;"
+    values = [@first_name, @last_name, @age, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM members where id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
-  def delete_all()
+
+  def self.delete_all()
     sql = "DELETE FROM members"
     SqlRunner.run(sql)
   end
@@ -34,4 +46,5 @@ class Member
   def self.map_items(member_data)
     result = member_data.map { |member| Member.new(member) }
     return result
+  end
 end
