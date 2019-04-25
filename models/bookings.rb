@@ -34,7 +34,7 @@ class Booking
   def self.all()
     sql = "SELECT * FROM bookings"
     results = SqlRunner.run(sql)
-    return results.map_items()
+    return self.map_items(results)
   end
 
   def self.delete_all()

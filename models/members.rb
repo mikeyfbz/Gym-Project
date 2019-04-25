@@ -40,7 +40,7 @@ class Member
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run(sql)
-    return results.map_items()
+    return self.map_items(results)
   end
 
   def self.map_items(member_data)
