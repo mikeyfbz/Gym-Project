@@ -1,0 +1,14 @@
+<h1>Class Details</h1>
+
+<p>Class Name: <%= @classe.name %></p>
+<p>Type: <%= @classe.type %></p>
+<p>Capacity: <%= @classe.capacity %></p>
+<p>Time: <%= @classe.time %></p>
+
+<p><a href="/classes/index">Back to Class List</a></p>
+<p><a href="/">Home</a></p>
+
+<p><a href="/classes/<%= @classe.id %>/edit">Edit Class</a></p>
+<form action="/classes/<%= @classe.id %>/delete" method="post">
+  <input type="submit" value="Delete Class">
+</form>

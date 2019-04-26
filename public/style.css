@@ -1,0 +1,33 @@
+h1 {
+  color: black;
+}
+
+.classes {
+  background-color: red;
+}
+
+table {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+td {
+  padding: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+form {
+  
+}
+
+li {
+  padding-right: 50px;
+}
+
+.home {
+  padding-left: 50px;
+}

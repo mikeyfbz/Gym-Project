@@ -1,0 +1,19 @@
+<h1>Edit Class Details</h1>
+
+<form action="classes/<%= @classe.id %>" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" ID="name" value="<%= @classe.name %>">
+  <br>
+  <label for="type">Type:</label>
+  <input type="text" name="type" id="type" value="<%= @classe.type %>">
+  <br>
+  <label for="capacity">Capacity:</label>
+  <input type="text" name="capacity" id="capacity" value="<%= @classe.capacity %>">
+  <br>
+  <label for="time">Time:</label>
+  <input type="text" name="time" id="time" value="<%= @classe.time %>">
+  <br>
+
+  <input type="submit" value="Create New Class">
+
+</form>

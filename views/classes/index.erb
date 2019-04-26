@@ -1,0 +1,25 @@
+
+<table>
+  <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Capacity</th>
+    <th>Time</th>
+  </thead>
+
+<% @classes.each do |item| %>
+  <tbody>
+    <td><a href="/classes/<%= item.id %>">Select</a></td>
+    <td><%= item.name() %></td>
+    <td><%= item.type() %></td>
+    <td><%= item.capacity() %></td>
+    <td><%= item.time() %></td>
+  </tbody>
+
+<% end %>
+
+</table>
+
+<p><a href="/classes/new">Create New Class</a></p>
+<p><a class="home" href="/">Home</a></p>

@@ -1,0 +1,7 @@
+<% @members.each do |member| %>
+  <p>First Name: <a href="/members/<%= member.id %>"><%= member.first_name() %></a></p>
+
+<% end %>
+
+
+<a href="/">Home</a>

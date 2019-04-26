@@ -18,7 +18,7 @@ class1 = Classe.new({'name' => 'Spin', 'type' => 'Cycle', 'capacity' => '30', 't
 class1.save()
 class2 = Classe.new({'name' => 'BodyPump', 'type' => 'Weight', 'capacity' => '25', 'time' => '19:30'})
 class2.save()
-class3 = Classe.new({'name' => 'Yoga', 'type' => 'relax', 'capacity' => '20', 'time' => '16:00'})
+class3 = Classe.new({'name' => 'Yoga', 'type' => 'Relax', 'capacity' => '20', 'time' => '16:00'})
 class3.save()
 
 booking1 = Booking.new({'member_id' => member1.id(), 'class_id' => class1.id})

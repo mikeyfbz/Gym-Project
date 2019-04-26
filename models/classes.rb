@@ -26,12 +26,19 @@ class Classe
   end
 
   def update()
-    sql = "UPDATE classes SET (name, tyoe, capacity, time) = ($1, $2, $3, $4) WHERE id = $5;"
+    sql = "UPDATE classes SET (name, type, capacity, time) = ($1, $2, $3, $4) WHERE id = $5;"
     values = [@name, @type, @capacity, @time, @id]
     SqlRunner.run(sql, values)
   end
 
 
+  def self.find(id)
+    sql = "SELECT * FROM classes WHERE id = $1;"
+    values = [id]
+    classe = SqlRunner.run(sql, values)
+    result = Classe.new(classe.first)
+    return result
+  end
 
   def self.all()
     sql = "SELECT * FROM classes"
