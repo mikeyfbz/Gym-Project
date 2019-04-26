@@ -3,9 +3,10 @@ require_relative('../db/sql_runner.rb')
 
 class Booking
 
-  attr_reader(:member_id, :class_id)
+  attr_reader :id, :member_id, :class_id
 
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @member_id = options['member_id'].to_i
     @class_id = options['class_id'].to_i
   end
@@ -29,7 +30,23 @@ class Booking
     SqlRunner.run()
   end
 
+  def get_member()
+    sql = "SELECT members.* FROM members
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE bookings.id = $1;"
+    values = [@id]
+    name = SqlRunner.run(sql, values)
+    return Member.map_items(name)
+  end
 
+  def self.find(id)
+    sql = "SELECT * FROM bookings WHERE id = $1;"
+    values = [id]
+    booking = SqlRunner.run(sql,values)[0]
+    result = Booking.new(result)
+    return result
+  end
 
   def self.all()
     sql = "SELECT * FROM bookings"

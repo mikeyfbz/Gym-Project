@@ -1,0 +1,9 @@
+<h1>Booking Details</h1>
+
+<% @bookings.each do |booking| %>
+
+<p>Booking: <%= booking.get_member[0].first_name %> - <%= booking.class_id %></p>
+
+
+
+<% end %>

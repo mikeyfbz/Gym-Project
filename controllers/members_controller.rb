@@ -7,7 +7,7 @@ require_relative('../models/members.rb')
 also_reload('../models/*')
 
 #index
-get '/members/index' do
+get '/members' do
   @members = Member.all()
   erb(:"members/index")
 end
