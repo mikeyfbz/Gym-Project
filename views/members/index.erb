@@ -1,5 +1,5 @@
 <% @members.each do |member| %>
-  <p>First Name: <a href="/members/<%= member.id %>"><%= member.first_name() %></a></p>
+  <p>Name: <a href="/members/<%= member.id %>"><%= member.first_name() %> <%= member.last_name %></a></p>
 
 <% end %>
 

@@ -5,7 +5,15 @@
 <p>Capacity: <%= @classe.capacity %></p>
 <p>Time: <%= @classe.time %></p>
 
-<p><a href="/classes/index">Back to Class List</a></p>
+<p>List of Members Booked in:</p>
+<% list_of_members = @classe.get_all_members_in_a_class %>
+<% list_of_members.each do |member| %>
+  <%= member.first_name() %> <%= member.last_name %>
+<br>
+<% end %>
+
+
+<p><a href="/classes">Back to Class List</a></p>
 <p><a href="/">Home</a></p>
 
 <p><a href="/classes/<%= @classe.id %>/edit">Edit Class</a></p>

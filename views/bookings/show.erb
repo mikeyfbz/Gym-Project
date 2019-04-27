@@ -6,5 +6,9 @@
 <p>Class Type: <%= @booking.get_class_details[0].type %></p>
 
 
+<p><a href="/bookings/<%= @booking.id %>/edit">Edit Booking</a></p>
+<p><form action="/bookings/<%= @booking.id %>/delete" method="post">
+  <input type="submit" value="Delete Booking">
+</form></p>
 <p><a href="/bookings">All Bookings</a></p>
 <p><a href="/">Home</a></p>

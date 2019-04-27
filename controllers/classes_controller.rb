@@ -19,6 +19,7 @@ end
 
 #show
 get '/classes/:id' do
+  @members = Member.all()
   @classe = Classe.find(params[:id])
   erb(:"/classes/show")
 end
@@ -42,7 +43,6 @@ post '/classes/:id' do
   classe.update()
   redirect to '/classes'
 end
-
 
 #delete
 post '/classes/:id/delete' do

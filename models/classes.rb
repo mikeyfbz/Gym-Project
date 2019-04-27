@@ -31,6 +31,19 @@ class Classe
     SqlRunner.run(sql, values)
   end
 
+  def get_all_members_in_a_class()
+    sql = "SELECT first_name, last_name FROM classes
+    INNER JOIN bookings
+    on classes.id = bookings.class_id
+    INNER JOIN members
+    on members.id = bookings.member_id
+    WHERE classes.id = $1;"
+    values = [@id]
+    names_hash = SqlRunner.run(sql, values)
+    names_array = Member.map_items(names_hash)
+    return names_array
+  end
+
 
   def self.find(id)
     sql = "SELECT * FROM classes WHERE id = $1;"

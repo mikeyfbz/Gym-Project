@@ -31,3 +31,25 @@ post '/bookings' do
   booking.save()
   redirect to '/bookings'
 end
+
+#edit
+get '/bookings/:id/edit' do
+  @booking = Booking.find(params[:id])
+  @members = Member.all()
+  @classes = Classe.all()
+  erb(:"bookings/edit")
+end
+
+#update
+post '/bookings/:id' do
+  booking = Booking.new(params[:id])
+  booking.update()
+  redirect to '/bookings/'
+end
+
+#delete
+post '/bookings/:id/delete' do
+  booking = Booking.find(params[:id])
+  booking.delete()
+  redirect to '/bookings'
+end

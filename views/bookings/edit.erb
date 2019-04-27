@@ -1,0 +1,32 @@
+<h1>Edit Booking Details</h1>
+
+<form action="/bookings/<%= @booking.id %>" method="post">
+
+  <label for="member_select">Select a Member:  </label>
+    <select name="member_id" id="member_select" selected="<%=  @booking.member_id%>">
+      <% @members.each do |member| %>
+        <% if (member.id == @booking.member_id) %>
+          <option value="<%= member.id %>" selected><%= member.first_name %></option>
+        <% else %>
+          <option value=<%= member.id %>><%= member.first_name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  <label for="class_select">Select a Class:    </label>
+    <select name="class_id" id="class_select" selected="<%=@booking.class_id%>">
+      <% @classes.each do |classe| %>
+        <% if (classe.id == @booking.class_id) %>
+          <option value="<%= classe.id %>" selected><%= classe.name %></option>
+        <% else %>
+          <option value="<%= classe.id %>"><%= classe.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+
+
+  <input type="submit" value="Update Booking">
+
+</form>
+
+<p><a href="/bookings">All Bookings</a></p>
+<p><a href="/">Home</a></p>

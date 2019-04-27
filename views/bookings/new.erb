@@ -1,15 +1,15 @@
 <h1>New Booking</h1>
 
 <form action="/bookings" method="post">
-  <label>Select a Member:
-    <select name="member_id">
+  <label for="member_select">Select a Member:
+    <select name="member_id" id="member_select">
       <% for member in @members %>
         <option value="<%= member.id %>"><%= member.first_name %></option>
       <% end %>
     </select>
   </label>
-  <label for="name">Select a Class:
-    <select name="class_id">
+  <label for="class_select">Select a Class:
+    <select name="class_id" id="class_select">
       <% for classe in @classes %>
         <option value="<%= classe.id %>"><%= classe.name %></option>
       <% end %>
