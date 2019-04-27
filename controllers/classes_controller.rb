@@ -27,7 +27,7 @@ end
 post '/classes' do
   classe = Classe.new(params)
   classe.save()
-  redirect to '/classes/index'
+  redirect to '/classes'
 end
 
 #Edit
@@ -40,7 +40,7 @@ end
 post '/classes/:id' do
   classe = Classe.new(params)
   classe.update()
-  redirect to '/classes/index'
+  redirect to '/classes'
 end
 
 
@@ -48,5 +48,5 @@ end
 post '/classes/:id/delete' do
   classe = Classe.find(params[:id])
   classe.delete()
-  redirect to '/classes/index'
+  redirect to '/classes'
 end

@@ -1,0 +1,10 @@
+<h1>Booking Details</h1>
+
+<p>Members Name: <%= @booking.get_member_details[0].first_name %> <%= @booking.get_member_details[0].last_name %></p>
+<p>Class Name: <%= @booking.get_class_details[0].name %></p>
+<p>Class Time: <%= @booking.get_class_details[0].time %></p>
+<p>Class Type: <%= @booking.get_class_details[0].type %></p>
+
+
+<p><a href="/bookings">All Bookings</a></p>
+<p><a href="/">Home</a></p>

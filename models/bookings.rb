@@ -30,8 +30,8 @@ class Booking
     SqlRunner.run()
   end
 
-  def get_member()
-    sql = "SELECT members.* FROM members
+  def get_member_details()
+    sql = "SELECT * FROM members
     INNER JOIN bookings
     ON members.id = bookings.member_id
     WHERE bookings.id = $1;"
@@ -40,11 +40,25 @@ class Booking
     return Member.map_items(name)
   end
 
+  def get_class_details()
+    sql = "SELECT * FROM classes
+    INNER JOIN bookings
+    ON classes.id = bookings.class_id
+    WHERE bookings.id = $1;"
+    values = [@id]
+    classe = SqlRunner.run(sql, values)
+    return Classe.map_items(classe)
+  end
+
+
+
+
+
   def self.find(id)
     sql = "SELECT * FROM bookings WHERE id = $1;"
     values = [id]
-    booking = SqlRunner.run(sql,values)[0]
-    result = Booking.new(result)
+    booking = SqlRunner.run(sql,values)
+    result = Booking.new(booking[0])
     return result
   end
 
