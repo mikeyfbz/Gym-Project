@@ -4,7 +4,11 @@
   <label for="member-select">Select Member:</label>
     <select name="member_id" id="member-select">
       <% @members.each do |member| %>
-        <option value="<%= member.id %>"><%= member.first_name %></option>
+        <% if (@classe.off_peak_class == false && member.premium_member == false) %>
+          <option value="<%= member.id %>" disabled> <%= member.first_name %> No Access</option>
+        <% else %>
+          <option value="<%= member.id %>"><%= member.first_name %></option>
+          <% end %>
       <% end %>
     </select>
     <label for="class-select">Class:</label>

@@ -7,6 +7,7 @@
     <th>Capacity</th>
     <th>Spaces Left</th>
     <th>Time</th>
+    <th>Date</th>
   </thead>
 
 <% @classes.each do |item| %>
@@ -17,6 +18,7 @@
     <td><%= item.capacity() %></td>
     <td><%= item.check_spaces() %></td>
     <td><%= item.time() %></td>
+    <td><%= item.date() %></td>
   </tbody>
 
 <% end %>

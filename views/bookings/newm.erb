@@ -9,7 +9,9 @@
       <select name="class_id" id="class-select">
         <% @classes.each do |classe| %>
           <% if (classe.check_spaces == 0) %>
-            <option value="<%= classe.id %>" disabled><%= classe.name %></option>
+            <option value="<%= classe.id %>" disabled><%= classe.name %> Class Full</option>
+            <% elsif (classe.off_peak_class == false && @member.premium_member == false)%>
+            <option value="<%= classe.id %>" disabled><%= classe.name %> Premium Only</option>
           <% else %>
             <option value="<%= classe.id %>"><%= classe.name %></option>
           <% end %>

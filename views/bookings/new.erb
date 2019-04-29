@@ -13,7 +13,7 @@
   <label for="class_select">Select a Class:
     <select name="class_id" id="class_select">
       <% for classe in @classes %>
-        <% if (classe.check_spaces() == 0) %>
+        <% if (classe.check_spaces() == 0)  %>
           <option value="<%= classe.id %>" disabled><%= classe.name %> Class Full</option>
         <% else %>
         <option value="<%= classe.id %>"><%= classe.name %></option>

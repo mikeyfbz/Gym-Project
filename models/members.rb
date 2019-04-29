@@ -2,25 +2,26 @@ require_relative('../db/sql_runner.rb')
 
 class Member
 
-  attr_reader(:id, :first_name, :last_name, :age)
+  attr_reader(:id, :first_name, :last_name, :age, :membership_type)
 
   def initialize (options)
     @first_name = options['first_name']
     @last_name = options['last_name']
     @age = options['age'].to_i
+    @membership_type = options['membership_type']
     @id = options['id'].to_i if options['id']
   end
 
   def save()
-    sql = "INSERT INTO members (first_name, last_name, age) VALUES ($1, $2, $3) RETURNING id;"
-    values = [@first_name, @last_name, @age]
+    sql = "INSERT INTO members (first_name, last_name, age, membership_type) VALUES ($1, $2, $3, $4) RETURNING id;"
+    values = [@first_name, @last_name, @age, @membership_type]
     result = SqlRunner.run(sql, values)[0]
     @id = result['id'].to_i
   end
 
   def update()
-    sql = "UPDATE members SET (first_name, last_name, age) = ($1, $2, $3) WHERE id = $4;"
-    values = [@first_name, @last_name, @age, @id]
+    sql = "UPDATE members SET (first_name, last_name, age, membership_type) = ($1, $2, $3, $4) WHERE id = $5;"
+    values = [@first_name, @last_name, @age, @membership_type, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -28,6 +29,14 @@ class Member
     sql = "DELETE FROM members where id = $1;"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def premium_member()
+    if @membership_type == 'Premium'
+      return true
+    else
+      return false
+    end
   end
 
   def self.find(id)

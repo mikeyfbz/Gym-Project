@@ -17,6 +17,11 @@
       <% @classes.each do |classe| %>
         <% if (classe.id == @booking.class_id) %>
           <option value="<%= classe.id %>" selected><%= classe.name %></option>
+        <% elsif (classe.check_spaces == 0) %>
+          <option value="<%= classe.id %>"disabled><%= classe.name %> Class Full</option>
+          <% elsif ((classe.off_peak_class == false && @booking.get_member_details[0].premium_member == false))
+             %>
+             <option value="<%= classe.id %>" disabled><%= classe.name %> Restricted Access </option>
         <% else %>
           <option value="<%= classe.id %>"><%= classe.name %></option>
         <% end %>

@@ -6,7 +6,8 @@ CREATE TABLE members (
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  age INT
+  age INT,
+  membership_type VARCHAR(255)
 );
 
 CREATE TABLE classes (
@@ -14,7 +15,8 @@ CREATE TABLE classes (
   name VARCHAR(255),
   type VARCHAR(255),
   capacity INT,
-  time TIME
+  time TIME,
+  date DATE
 );
 
 CREATE TABLE bookings (

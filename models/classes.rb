@@ -2,19 +2,20 @@ require_relative('../db/sql_runner.rb')
 
 class Classe
 
-  attr_reader :id, :name, :type, :capacity, :time
+  attr_reader :id, :name, :type, :capacity, :time, :date
 
   def initialize (options)
     @name = options['name']
     @type = options['type']
     @capacity = options['capacity'].to_i
     @time = options['time']
+    @date = options['date']
     @id = options['id'].to_i if options['id']
   end
 
   def save()
-    sql = "INSERT INTO classes (name, type, capacity, time) VALUES ($1,$2,$3,$4) RETURNING id;"
-    values = [@name, @type, @capacity, @time]
+    sql = "INSERT INTO classes (name, type, capacity, time, date) VALUES ($1,$2,$3,$4,$5) RETURNING id;"
+    values = [@name, @type, @capacity, @time, @date]
     result = SqlRunner.run(sql, values)[0]
     @id = result['id'].to_i
   end
@@ -26,8 +27,8 @@ class Classe
   end
 
   def update()
-    sql = "UPDATE classes SET (name, type, capacity, time) = ($1, $2, $3, $4) WHERE id = $5;"
-    values = [@name, @type, @capacity, @time, @id]
+    sql = "UPDATE classes SET (name, type, capacity, time, date) = ($1, $2, $3, $4, $5) WHERE id = $6;"
+    values = [@name, @type, @capacity, @time, @date, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -48,6 +49,14 @@ class Classe
     attendance = get_all_members_in_a_class()
     spaces = @capacity - attendance.count()
     return spaces
+  end
+
+  def off_peak_class()
+    if time.between?('09:30:00', '16:30:00')
+      return true
+    else
+      return false
+    end
   end
 
   def self.list_upcoming_class_times()
