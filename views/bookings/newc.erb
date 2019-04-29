@@ -1,0 +1,20 @@
+<h1>Add Member to Class</h1>
+
+<form action="/bookings" method="post">
+  <label for="member-select">Select Member:</label>
+    <select name="member_id" id="member-select">
+      <% @members.each do |member| %>
+        <option value="<%= member.id %>"><%= member.first_name %></option>
+      <% end %>
+    </select>
+    <label for="class-select">Class:</label>
+      <select name="class_id" id="class-select">
+        <option value="<%= @classe.id %>"><%= @classe.name %></option>
+      </select>
+
+    <input type="submit" value="Book into Class">
+</form>
+
+
+<p><a href="/classes">Class List</a></p>
+<p><a href="/">Home</a></p>

@@ -8,7 +8,7 @@ class Classe
     @name = options['name']
     @type = options['type']
     @capacity = options['capacity'].to_i
-    @time = options['time'].to_f
+    @time = options['time']
     @id = options['id'].to_i if options['id']
   end
 
@@ -44,6 +44,36 @@ class Classe
     return names_array
   end
 
+  def get_class_attendance()
+    sql = "SELECT bookings.id from classes
+    INNER JOIN bookings
+    ON classes.id = bookings.class_id
+    INNER JOIN members
+    ON bookings.member_id = members.id
+    WHERE class_id = $1;"
+    values = [@id]
+    total = SqlRunner.run(sql, values)
+    bookings_count = Booking.map_items(total).count
+    return bookings_count
+  end
+
+  def check_if_class_is_full()
+    if (@capacity > get_class_attendance())
+      return false
+    else
+      return true
+    end
+  end
+
+  def self.list_upcoming_class_times()
+    sql = "SELECT * FROM classes
+    WHERE time > CURRENT_TIME
+    ORDER BY time;"
+    results = SqlRunner.run(sql)
+    array_of_classes = self.map_items(results)
+    return array_of_classes
+  end
+
 
   def self.find(id)
     sql = "SELECT * FROM classes WHERE id = $1;"
@@ -54,7 +84,8 @@ class Classe
   end
 
   def self.all()
-    sql = "SELECT * FROM classes"
+    sql = "SELECT * FROM classes
+    ORDER BY time;"
     results = SqlRunner.run(sql)
     return self.map_items(results)
   end

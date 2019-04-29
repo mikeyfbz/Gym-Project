@@ -2,8 +2,8 @@
 
 <form action="/bookings/<%= @booking.id %>" method="post">
 
-  <label for="member_select">Select a Member:  </label>
-    <select name="member_id" id="member_select" selected="<%=  @booking.member_id%>">
+  <label for="member-select">Select a Member:  </label>
+    <select name="member_id" id="member-select" selected="<%= @booking.member_id%>">
       <% @members.each do |member| %>
         <% if (member.id == @booking.member_id) %>
           <option value="<%= member.id %>" selected><%= member.first_name %></option>
@@ -12,8 +12,8 @@
         <% end %>
       <% end %>
     </select>
-  <label for="class_select">Select a Class:    </label>
-    <select name="class_id" id="class_select" selected="<%=@booking.class_id%>">
+  <label for="class-select">Select a Class:    </label>
+    <select name="class_id" id="class-select" selected="<%=@booking.class_id%>">
       <% @classes.each do |classe| %>
         <% if (classe.id == @booking.class_id) %>
           <option value="<%= classe.id %>" selected><%= classe.name %></option>

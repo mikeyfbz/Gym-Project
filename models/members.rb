@@ -35,7 +35,7 @@ class Member
     values = [id]
     member = SqlRunner.run(sql, values)
     result = Member.new(member.first)
-    return result 
+    return result
   end
 
   def self.delete_all()
@@ -44,7 +44,8 @@ class Member
   end
 
   def self.all()
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members
+    ORDER BY first_name;"
     results = SqlRunner.run(sql)
     return self.map_items(results)
   end

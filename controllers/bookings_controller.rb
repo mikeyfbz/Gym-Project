@@ -32,6 +32,22 @@ post '/bookings' do
   redirect to '/bookings'
 end
 
+#new booking with member pre-populated
+get '/bookings/:id/newm' do
+  @member = Member.find(params[:id])
+  @members = Member.all()
+  @classes = Classe.all()
+  erb(:"bookings/newm")
+end
+
+#new booking with class pre-populated
+get '/bookings/:id/new' do
+  @classe = Classe.find(params[:id])
+  @members = Member.all()
+  @classes = Classe.all()
+  erb(:"bookings/newc")
+end
+
 #edit
 get '/bookings/:id/edit' do
   @booking = Booking.find(params[:id])
@@ -42,9 +58,9 @@ end
 
 #update
 post '/bookings/:id' do
-  booking = Booking.new(params[:id])
+  booking = Booking.new(params)
   booking.update()
-  redirect to '/bookings/'
+  redirect to '/bookings'
 end
 
 #delete

@@ -1,6 +1,6 @@
 <h1>Edit Class Details</h1>
 
-<form action="classes/<%= @classe.id %>" method="post">
+<form action="/classes/<%= @classe.id %>" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name" ID="name" value="<%= @classe.name %>">
   <br>
@@ -14,6 +14,6 @@
   <input type="text" name="time" id="time" value="<%= @classe.time %>">
   <br>
 
-  <input type="submit" value="Create New Class">
+  <input type="submit" value="Update Class">
 
 </form>

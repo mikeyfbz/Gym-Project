@@ -17,6 +17,12 @@ get '/classes/new' do
   erb(:"classes/new")
 end
 
+#class listings
+get '/classes/list' do
+  @classes = Classe.list_upcoming_class_times
+  erb(:"classes/list")
+end
+
 #show
 get '/classes/:id' do
   @members = Member.all()

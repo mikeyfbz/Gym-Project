@@ -27,7 +27,7 @@ class Booking
   def update()
     sql = "UPDATE bookings SET (member_id, class_id) = ($1, $2) WHERE id = $3;"
     values = [@member_id, @class_id, @id]
-    SqlRunner.run()
+    SqlRunner.run(sql,values)
   end
 
   def get_member_details()
