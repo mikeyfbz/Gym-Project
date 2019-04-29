@@ -2,7 +2,7 @@
 
 <% @bookings.each do |booking| %>
 
-<p>Booking: <a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a> - <%= booking.get_class_details[0].name %></p>
+    <p>Booking: <a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a> - <%= booking.get_class_details[0].name %></p>
 
 <% end %>
 

@@ -50,7 +50,15 @@ class Booking
     return Classe.map_items(classe)
   end
 
-
+  def self.remove_old_bookings()
+    sql = "SELECT bookings.* FROM bookings
+    INNER JOIN classes
+    ON classes.id = bookings.class_id
+    WHERE time > CURRENT_TIME
+    ORDER BY time;"
+    results = SqlRunner.run(sql)
+    return Booking.map_items(results)
+  end
 
 
 

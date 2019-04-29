@@ -61,7 +61,8 @@ class Classe
 
   def self.list_upcoming_class_times()
     sql = "SELECT * FROM classes
-    WHERE time > CURRENT_TIME
+    WHERE date = CURRENT_DATE AND
+    time > CURRENT_TIME
     ORDER BY time;"
     results = SqlRunner.run(sql)
     array_of_classes = self.map_items(results)
@@ -79,7 +80,7 @@ class Classe
 
   def self.all()
     sql = "SELECT * FROM classes
-    ORDER BY time;"
+    ORDER BY date, time;"
     results = SqlRunner.run(sql)
     return self.map_items(results)
   end

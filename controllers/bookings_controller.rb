@@ -8,14 +8,14 @@ also_reload('../models/*')
 
 #index
 get '/bookings' do
-  @bookings = Booking.all()
+  @bookings = Booking.remove_old_bookings()
   erb(:"bookings/index")
 end
 
 #new
 get '/bookings/new' do
   @members = Member.all()
-  @classes = Classe.all()
+  @classes = Classe.list_upcoming_class_times()
   erb(:"bookings/new")
 end
 
