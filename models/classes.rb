@@ -44,25 +44,10 @@ class Classe
     return names_array
   end
 
-  def get_class_attendance()
-    sql = "SELECT bookings.id from classes
-    INNER JOIN bookings
-    ON classes.id = bookings.class_id
-    INNER JOIN members
-    ON bookings.member_id = members.id
-    WHERE class_id = $1;"
-    values = [@id]
-    total = SqlRunner.run(sql, values)
-    bookings_count = Booking.map_items(total).count
-    return bookings_count
-  end
-
-  def check_if_class_is_full()
-    if (@capacity > get_class_attendance())
-      return false
-    else
-      return true
-    end
+  def check_spaces()
+    attendance = get_all_members_in_a_class()
+    spaces = @capacity - attendance.count()
+    return spaces
   end
 
   def self.list_upcoming_class_times()

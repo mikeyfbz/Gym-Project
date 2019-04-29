@@ -14,7 +14,7 @@ CREATE TABLE classes (
   name VARCHAR(255),
   type VARCHAR(255),
   capacity INT,
-  time TIME 
+  time TIME
 );
 
 CREATE TABLE bookings (

@@ -8,7 +8,11 @@
     <label for="class-select">Class:</label>
       <select name="class_id" id="class-select">
         <% @classes.each do |classe| %>
-        <option value="<%= classe.id %>"><%= classe.name %></option>
+          <% if (classe.check_spaces == 0) %>
+            <option value="<%= classe.id %>" disabled><%= classe.name %></option>
+          <% else %>
+            <option value="<%= classe.id %>"><%= classe.name %></option>
+          <% end %>
         <% end %>
       </select>
 

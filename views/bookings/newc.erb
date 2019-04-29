@@ -9,7 +9,11 @@
     </select>
     <label for="class-select">Class:</label>
       <select name="class_id" id="class-select">
+        <% if (@classe.check_spaces == 0) %>
+          <option value="<%= @classe.id %>"disabled><%= @classe.name %></option>
+        <% else %>
         <option value="<%= @classe.id %>"><%= @classe.name %></option>
+        <% end %>
       </select>
 
     <input type="submit" value="Book into Class">
