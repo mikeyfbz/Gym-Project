@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 
+
 class Classe
 
   attr_reader :id, :name, :type, :capacity, :time, :date
@@ -59,6 +60,29 @@ class Classe
     end
   end
 
+
+
+  def self.day_of_week(date)
+    class_date = Date.parse(date)
+    if (class_date.monday?)
+      "Monday"
+    elsif (class_date.tuesday?)
+      "Tuesday"
+    elsif (class_date.wednesday?)
+      "Wednesday"
+    elsif (class_date.thursday?)
+      "Thursday"
+    elsif (class_date.friday?)
+      "Friday"
+    elsif (class_date.saturday?)
+      "Saturday"
+    elsif (class_date.sunday?)
+      "Sunday"
+    else
+      nil
+    end
+  end
+
   def self.list_upcoming_class_times()
     sql = "SELECT * FROM classes
     WHERE date = CURRENT_DATE AND
@@ -67,6 +91,14 @@ class Classe
     results = SqlRunner.run(sql)
     array_of_classes = self.map_items(results)
     return array_of_classes
+  end
+
+  def self.list_by_time()
+    sql = "SELECT * FROM classes
+    ORDER BY time;"
+    results = SqlRunner.run(sql)
+    array_of_future_classes = self.map_items(results)
+    return array_of_future_classes
   end
 
 

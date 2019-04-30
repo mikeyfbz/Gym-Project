@@ -23,6 +23,12 @@ get '/classes/list' do
   erb(:"classes/list")
 end
 
+#timetable
+get '/classes/timetable' do
+  @classes = Classe.all()
+  erb(:"classes/timetable")
+end
+
 #show
 get '/classes/:id' do
   @members = Member.all()

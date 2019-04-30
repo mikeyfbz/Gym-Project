@@ -10,6 +10,7 @@
     <th>Spaces Left</th>
     <th>Time</th>
     <th>Date</th>
+    <th>Day Of Week</th>
   </thead>
 
 <% @classes.each do |item| %>
@@ -21,9 +22,13 @@
     <td><%= item.check_spaces() %></td>
     <td><%= item.time() %></td>
     <td><%= item.date() %></td>
+    <td><%= Classe.day_of_week(item.date()) %></td>
   </tbody>
 
 <% end %>
+
+
+
 
 </table>
 

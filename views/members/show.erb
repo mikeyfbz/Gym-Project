@@ -3,6 +3,14 @@
 <p>Name: <%= @member.first_name %> <%= @member.last_name %></p>
 <p>Age: <%= @member.age %></p>
 <p>Membership Type: <%= @member.membership_type %></p>
+
+<p><u>Classes Member is Booked into:</u></p>
+<% mem_bookings = @member.list_all_classes_member_booked_into()%>
+<% mem_bookings.each do |booking| %>
+  <p><%= booking.get_class_details[0].name %></p>
+
+<% end  %>
+
 <form action="/members/<%= @member.id %>/delete" method="post">
   <input type="submit" value="Delete Member">
 </form>

@@ -8,25 +8,48 @@ h1 {
   background-color: red;
 }
 
+.week {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px;
+}
+
+.timetable {
+  table-layout: auto;
+  width: 120px;
+  border: 1px solid black;
+}
+
 table {
   text-align: center;
   padding: 50px 20px;
 }
 
+tr {
+
+}
+
 td {
-  padding: 20px;
+
 }
 
 ul {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 50% 50%;
 }
 
 form {
 
 }
 
+button {
+  font-size: 20px;
+}
+
 li {
+  font-size: 20px;
+  padding-top: 20px;
   padding-right: 50px;
 }
 

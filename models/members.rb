@@ -39,6 +39,20 @@ class Member
     end
   end
 
+def list_all_classes_member_booked_into()
+  sql = "SELECT bookings.* FROM members
+  INNER JOIN bookings
+  ON members.id = bookings.member_id
+  INNER JOIN classes
+  ON bookings.class_id = classes.id
+  WHERE members.id = $1;"
+  values = [@id]
+  results = SqlRunner.run(sql, values)
+  class_bookings = Booking.map_items(results)
+  return class_bookings
+end
+
+
   def self.find(id)
     sql = "SELECT * FROM members WHERE id = $1;"
     values = [id]
