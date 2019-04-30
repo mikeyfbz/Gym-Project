@@ -8,7 +8,7 @@
   <input type="text" name="last_name" id="last-name" value="<%= @member.last_name %>">
   <br>
   <label for="age">Age:</label>
-  <input type="text" name="age" id="age" value="<%= @member.age %>">
+  <input type="number" name="age" id="age" value="<%= @member.age %>">
   <br>
   <label for="membership_type">Membership Type:</label>
     <select name="membership_type" id="membership_type" value="<%= @member.membership_type %>">
@@ -20,3 +20,6 @@
 <input type="submit" value="Amend Member">
 
 </form>
+
+<p><a href="/">Home</a></p>
+<p><a href="/members">Member List</a></p>

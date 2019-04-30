@@ -5,8 +5,8 @@ class Member
   attr_reader(:id, :first_name, :last_name, :age, :membership_type)
 
   def initialize (options)
-    @first_name = options['first_name']
-    @last_name = options['last_name']
+    @first_name = options['first_name'].downcase.capitalize
+    @last_name = options['last_name'].downcase.capitalize
     @age = options['age'].to_i
     @membership_type = options['membership_type']
     @id = options['id'].to_i if options['id']

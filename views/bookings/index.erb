@@ -6,13 +6,18 @@
     <th>Booking Number</th>
     <th>Member Name</th>
     <th>Class Name</th>
+    <th>Time</th>
+    <th>Date</th>
     </thead>
 
 
 <% @bookings.each do |booking| %>
     <tr>
       <td><%= booking.id %></td>
-    <td><a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a></td> <td><%= booking.get_class_details[0].name %></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a></td>
+    <td><%= booking.get_class_details[0].name %></td>
+    <td><%= booking.get_class_details[0].time %></td>
+    <td><%= booking.get_class_details[0].date %></td>
     </tr>
 
 <% end %>

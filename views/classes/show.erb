@@ -9,15 +9,12 @@
 <p>List of Members Booked in:</p>
 <% list_of_members = @classe.get_all_members_in_a_class %>
 <% list_of_members.each do |member| %>
-  <%= member.first_name() %> <%= member.last_name %>
-<br>
+  <p><%= member.first_name() %> <%= member.last_name %></p>
 <% end %>
 
+<p>Spaces Left: <%= @classe.check_spaces()%>
 
-<br>
-Spaces Left: <%= @classe.check_spaces()%>
-
-<% if (@classe.check_spaces != 0) %>
+<% if (@classe.check_spaces != 0) %></p>
 <p><a href="/bookings/<%= @classe.id %>/new">Add Member to Class</a></p>
 <% end %>
 <p><a href="/classes">Back to Class List</a></p>

@@ -1,4 +1,5 @@
 
+<h1>Membership Details</h1>
 <table class="member_table">
 
 <tr>
@@ -13,7 +14,11 @@
     <td><%= member.id %></td>
     <td><a href="/members/<%= member.id %>"><%= member.first_name() %></a></td>
     <td><%= member.last_name %></td>
-    <td> <%= member.membership_type %></td>
+    <% if (member.membership_type == 'Premium') %>
+      <td class="premium"> <%= member.membership_type %></td>
+      <% else %>
+      <td><%= member.membership_type %></td>
+      <% end %>
 </tr>
 <% end %>
 </table>

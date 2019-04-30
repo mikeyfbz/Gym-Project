@@ -1,33 +1,47 @@
+* {
+  background-color: silver;
+}
 
+label {
+  font-size: 25px;
+}
+
+input {
+  font-size: 25px;
+  background-color: white;
+}
 
 h1 {
   color: black;
 }
+
+a {
+  font-size: 20px;
+  background-color: silver;
+  color: darkred;
+}
+
 
 table {
   text-align: center;
   padding: 50px 20px;
 }
 
-tr {
-
+table a {
+  background-color: white;
 }
 
-td {
-
+p {
+  font-size: 25px;
 }
 
 ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 1fr 1fr;
 }
 
-form {
-
-}
-
-button {
+button, a{
   font-size: 30px;
 }
 
@@ -38,7 +52,11 @@ li {
 }
 
 th {
-  /* padding: 20px; */
+  font-size: 30px;
+}
+
+td {
+  background-color: white;
 }
 
 .home {
@@ -49,10 +67,23 @@ th {
   background-color: red;
 }
 
+select {
+  font-size: 25px;
+  background-color: white;
+}
+
 .week {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-template-rows: 200px 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: auto;
+  border: 5px solid black;
+  width: 800px;
+}
+
+.week a {
+  font-size: 18px;
+  color: blue;
 }
 
 .timetable {
@@ -69,6 +100,7 @@ th {
 
 .member_table td {
   border: 1px solid black;
+  font-size: 25px;
 }
 
 .booking_table {
@@ -77,6 +109,7 @@ th {
 
 .booking_table td {
   border: 1px solid black;
+  font-size: 25px;
 }
 
 .new_member {
@@ -84,6 +117,16 @@ th {
   width: auto;
   border: 2px solid black;
 }
+
+.new_member td {
+  font-size: 25px;
+  background-color: silver;
+}
+
+.new_member tr {
+  display: flex;
+}
+
 
 .new_class {
   border: 2px solid black;
@@ -95,29 +138,28 @@ th {
 
 .list_class td {
   border: 1px solid black;
+  font-size: 25px;
 }
 
-.new_member tr {
-  display: flex;
-}
 
 .new_class td {
-  font-size: 20px;
+  font-size: 25px;
+  background-color: silver;
 }
 
 .new_member_button {
   font-size: 20px;
+  height: 40px;
 }
 
 .new_class_button {
   font-size: 20px;
 }
 
-.week {
-  border: 5px solid black;
-  width: 800px;
-}
-
 .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .empty{
   border: 1px solid black;
+}
+
+.premium {
+  background-color: gold;
 }

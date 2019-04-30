@@ -6,8 +6,8 @@ class Classe
   attr_reader :id, :name, :type, :capacity, :time, :date
 
   def initialize (options)
-    @name = options['name']
-    @type = options['type']
+    @name = options['name'].downcase.capitalize
+    @type = options['type'].downcase.capitalize
     @capacity = options['capacity'].to_i
     @time = options['time']
     @date = options['date']
@@ -85,9 +85,8 @@ class Classe
 
   def self.list_upcoming_class_times()
     sql = "SELECT * FROM classes
-    WHERE date = CURRENT_DATE AND
-    time > CURRENT_TIME
-    ORDER BY time;"
+    WHERE date = CURRENT_DATE
+    ORDER BY date;"
     results = SqlRunner.run(sql)
     array_of_classes = self.map_items(results)
     return array_of_classes
@@ -112,7 +111,7 @@ class Classe
 
   def self.all()
     sql = "SELECT * FROM classes
-    ORDER BY date, time;"
+    ORDER BY time;"
     results = SqlRunner.run(sql)
     return self.map_items(results)
   end
