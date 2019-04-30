@@ -4,6 +4,47 @@ h1 {
   color: black;
 }
 
+table {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+tr {
+
+}
+
+td {
+
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+}
+
+form {
+
+}
+
+button {
+  font-size: 30px;
+}
+
+li {
+  font-size: 20px;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+
+th {
+  /* padding: 20px; */
+}
+
+.home {
+  padding-left: 50px;
+}
+
 .classes {
   background-color: red;
 }
@@ -20,39 +61,63 @@ h1 {
   border: 1px solid black;
 }
 
-table {
-  text-align: center;
-  padding: 50px 20px;
+.member_table {
+  table-layout: auto;
+  width: auto;
+  border: 2px solid black;
 }
 
-tr {
-
+.member_table td {
+  border: 1px solid black;
 }
 
-td {
-
+.booking_table {
+  border: 2px solid black;
 }
 
-ul {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 50% 50%;
+.booking_table td {
+  border: 1px solid black;
 }
 
-form {
-
+.new_member {
+  table-layout: auto;
+  width: auto;
+  border: 2px solid black;
 }
 
-button {
+.new_class {
+  border: 2px solid black;
+}
+
+.list_class {
+  border: 2px solid black;
+}
+
+.list_class td {
+  border: 1px solid black;
+}
+
+.new_member tr {
+  display: flex;
+}
+
+.new_class td {
   font-size: 20px;
 }
 
-li {
+.new_member_button {
   font-size: 20px;
-  padding-top: 20px;
-  padding-right: 50px;
 }
 
-.home {
-  padding-left: 50px;
+.new_class_button {
+  font-size: 20px;
+}
+
+.week {
+  border: 5px solid black;
+  width: 800px;
+}
+
+.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .empty{
+  border: 1px solid black;
 }

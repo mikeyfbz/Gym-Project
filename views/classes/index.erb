@@ -1,33 +1,119 @@
+<h1>Class Timetable</h1>
 
-<table>
-  <thead>
-    <th></th>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Capacity</th>
-    <th>Spaces Left</th>
-    <th>Time</th>
-    <th>Date</th>
-    <th>Day of Week</th>
-  </thead>
+  <% up_to_date_classes = @classes %>
 
-<% @classes.each do |item| %>
-  <tbody>
-    <td><a href="/classes/<%= item.id %>">Select</a></td>
-    <td><%= item.name() %></td>
-    <td><%= item.type() %></td>
-    <td><%= item.capacity() %></td>
-    <td><%= item.check_spaces() %></td>
-    <td><%= item.time() %></td>
-    <td><%= item.date() %></td>
-    <td><%= Classe.day_of_week(item.date()) %></td>
-  </tbody>
+<div class="week">
 
-<% end %>
+  <div class="monday" style="padding: 20px">
+    <h3>Monday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Monday" %>
+      <tbody>
+        <tr>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
 
-</table>
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="tuesday" style="padding: 20px">
+    <h3>Tuesday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Tuesday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
 
-<p><a href="/classes/timetable">Timetable</a></p>
-<p><a href="/classes/new">Create New Class</a></p>
-<p><a href="/classes/list"">Upcoming Classes</a></p>
-<p><a class="home" href="/">Home</a></p>
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="wednesday" style="padding: 20px">
+    <h3>Wednesday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Wednesday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="thursday" style="padding: 20px">
+    <h3>Thursday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Thursday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="friday" style="padding: 20px">
+    <h3>Friday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Friday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="saturday" style="padding: 20px">
+    <h3>Saturday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Saturday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="sunday" style="padding: 20px">
+    <h3>Sunday</h3>
+    <% up_to_date_classes.each do |classe| %>
+    <% if (Classe.day_of_week(classe.date())) == "Sunday" %>
+      <tbody>
+        <tr>
+          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+
+        <td><%= classe.time() %></td>
+        </tr>
+        <br>
+      </tbody>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="empty">
+
+  </div>
+</div>
+
+<p><a href="/">Home</a></p>
+
+<p><a href="/classes/new">Create a New Class</a></p>

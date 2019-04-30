@@ -1,8 +1,22 @@
+
+<table class="member_table">
+
+<tr>
+  <th>Membership Number</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Membership Type</th>
+</tr>
+
 <% @members.each do |member| %>
-  <p>Name: <a href="/members/<%= member.id %>"><%= member.first_name() %> <%= member.last_name %></a> <%= member.membership_type %></p>
-
-
+<tr>
+    <td><%= member.id %></td>
+    <td><a href="/members/<%= member.id %>"><%= member.first_name() %></a></td>
+    <td><%= member.last_name %></td>
+    <td> <%= member.membership_type %></td>
+</tr>
 <% end %>
+</table>
 
 <p><a href="/members/new">Create a New Member</a></p>
 <a href="/">Home</a>

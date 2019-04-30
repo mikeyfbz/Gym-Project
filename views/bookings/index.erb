@@ -1,10 +1,22 @@
 <h1>Booking Details</h1>
 
-<% @bookings.each do |booking| %>
+<table class="booking_table">
 
-    <p>Booking: <a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a> - <%= booking.get_class_details[0].name %></p>
+    <thead>
+    <th>Booking Number</th>
+    <th>Member Name</th>
+    <th>Class Name</th>
+    </thead>
+
+
+<% @bookings.each do |booking| %>
+    <tr>
+      <td><%= booking.id %></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.get_member_details[0].first_name %></a></td> <td><%= booking.get_class_details[0].name %></td>
+    </tr>
 
 <% end %>
 
+</table>
 <p><a href="/">Home</a></p>
 <p><a href="/bookings/new">Create New Booking</a></p>

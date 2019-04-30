@@ -68,7 +68,7 @@ end
 
   def self.all()
     sql = "SELECT * FROM members
-    ORDER BY first_name;"
+    ORDER BY id;"
     results = SqlRunner.run(sql)
     return self.map_items(results)
   end

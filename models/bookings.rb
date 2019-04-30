@@ -55,7 +55,7 @@ class Booking
     INNER JOIN classes
     ON classes.id = bookings.class_id
     WHERE time > CURRENT_TIME
-    ORDER BY time;"
+    ORDER BY id;"
     results = SqlRunner.run(sql)
     return Booking.map_items(results)
   end

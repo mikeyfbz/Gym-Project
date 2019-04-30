@@ -1,30 +1,34 @@
 <form action="/members" method="post">
-  <br>
-  <label for="first-name">First Name:</label>
-    <input type="text" name="first_name" id="first-name">
-    <br>
-    <br>
-  <label for="last-name">Last Name:</label>
-    <input type="text" name="last_name" id="last-name">
-    <br>
-    <br>
-  <label for="age">Age:</label>
-    <input type="text" name="age" id="age">
-    <br>
-    <br>
-  <label for="membership_type">Membership Type:</label>
+  <table class="new_member">
+  <tr>
+
+  <td><label for="first-name">First Name:</label><input type="text" name="first_name" id="first-name"></td>
+
+  <td><label for="last-name">Last Name:</label>
+    <input type="text" name="last_name" id="last-name"></td>
+
+  </tr>
+  <tr>
+
+
+  <td><label for="age">Age:</label>
+    <input type="text" name="age" id="age"></td>
+  </tr>
+  <tr>
+  <td><label for="membership_type">Membership Type:</label>
     <select name="membership_type" id="membership_type">
       <option value="Premium">Premium</option>
       <option value="Off_Peak">Off-Peak</option>
-    </select>
-    <br>
-    <br>
-    <input type="submit" value="Create New Member">
-    <br>
-    <br>
+    </select></td>
+  </tr>
+  </table>
 
-    <a href="/">Home</a>
+    <input class="new_member_button" type="submit" value="Create New Member">
 
 </form>
+
+<p><a href="/">Home</a></p>
+
+
 
 <p><a href="/members">Back to Members List</a></p>
