@@ -59,6 +59,13 @@ td {
   background-color: white;
 }
 
+.main_title {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  text-shadow: 1px 1px darkred;
+}
+
 .home {
   padding-left: 50px;
 }
