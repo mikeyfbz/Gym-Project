@@ -85,13 +85,19 @@ select {
   grid-template-rows: 1fr 1fr;
   height: auto;
   border: 5px solid black;
-  width: 800px;
+  width: auto;
+}
+
+.full {
+  color: darkred;
 }
 
 .week a {
   font-size: 18px;
   color: blue;
 }
+
+
 
 .timetable {
   table-layout: auto;

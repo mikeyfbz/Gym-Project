@@ -10,7 +10,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Monday" %>
       <tbody>
         <tr>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
         <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -25,7 +29,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Tuesday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -40,7 +48,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Wednesday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -55,7 +67,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Thursday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -70,7 +86,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Friday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -85,7 +105,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Saturday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>
@@ -100,7 +124,11 @@
     <% if (Classe.day_of_week(classe.date())) == "Sunday" %>
       <tbody>
         <tr>
-          <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% if (classe.check_spaces == 0) %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a> <span class="full"><b>Class Full</b></span></td>
+          <% else %>
+        <td><a href="/classes/<%= classe.id %>"><%= classe.name() %></a></td>
+          <% end %>
 
         <td><%= classe.time() %></td>
         </tr>

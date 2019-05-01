@@ -9,11 +9,11 @@
       <select name="class_id" id="class-select">
         <% @classes.each do |classe| %>
           <% if (classe.check_spaces == 0) %>
-            <option value="<%= classe.id %>" disabled><%= classe.name %> Class Full</option>
+            <option value="<%= classe.id %>" disabled><%= classe.name %> <%= classe.time %> <%= Classe.day_of_week(classe.date) %> Class Full</option>
             <% elsif (classe.off_peak_class == false && @member.premium_member == false)%>
-            <option value="<%= classe.id %>" disabled><%= classe.name %> Premium Only</option>
+            <option value="<%= classe.id %>" disabled><%= classe.name %> <%= classe.time %> <%= Classe.day_of_week(classe.date) %> Premium Only</option>
           <% else %>
-            <option value="<%= classe.id %>"><%= classe.name %></option>
+            <option value="<%= classe.id %>"><%= classe.name %> <%= classe.time %> <%= Classe.day_of_week(classe.date) %></option>
           <% end %>
         <% end %>
       </select>
