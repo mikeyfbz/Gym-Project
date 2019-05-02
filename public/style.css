@@ -2,33 +2,10 @@
   background-color: silver;
 }
 
-label {
-  font-size: 25px;
-}
-
-input {
-  font-size: 25px;
-  background-color: white;
-}
-
-h1 {
-  color: black;
-}
-
 a {
   font-size: 20px;
   background-color: silver;
   color: darkred;
-}
-
-
-table {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-table a {
-  background-color: white;
 }
 
 p {
@@ -41,14 +18,19 @@ ul {
   grid-template-rows: 1fr 1fr;
 }
 
-button, a{
-  font-size: 30px;
-}
-
 li {
   font-size: 20px;
   padding-top: 50px;
   padding-right: 50px;
+}
+
+table {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+table a {
+  background-color: white;
 }
 
 th {
@@ -58,6 +40,26 @@ th {
 td {
   background-color: white;
 }
+
+label {
+  font-size: 25px;
+}
+
+input {
+  font-size: 25px;
+  background-color: white;
+}
+
+button, a{
+  font-size: 30px;
+}
+
+select {
+  font-size: 25px;
+  background-color: white;
+}
+
+
 
 .main_title {
   display: flex;
@@ -74,11 +76,6 @@ td {
   background-color: red;
 }
 
-select {
-  font-size: 25px;
-  background-color: white;
-}
-
 .week {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -88,24 +85,21 @@ select {
   width: auto;
 }
 
-.full {
-  color: darkred;
-}
-
 .week a {
   font-size: 18px;
   color: blue;
 }
 
+.full {
+  color: darkred;
+}
 
-
-.timetable {
-  table-layout: auto;
-  width: 120px;
-  border: 1px solid black;
+.member_index_page {
+  text-align: center;
 }
 
 .member_table {
+  display: inline-block;
   table-layout: auto;
   width: auto;
   border: 2px solid black;
@@ -116,7 +110,12 @@ select {
   font-size: 25px;
 }
 
+.booking_index_page {
+  text-align: center;
+}
+
 .booking_table {
+  display: inline-block;
   border: 2px solid black;
 }
 
@@ -125,10 +124,15 @@ select {
   font-size: 25px;
 }
 
+.new_member_page {
+  text-align: center;
+}
+
 .new_member {
   table-layout: auto;
   width: auto;
   border: 2px solid black;
+  display: inline-block;
 }
 
 .new_member td {
@@ -138,26 +142,7 @@ select {
 
 .new_member tr {
   display: flex;
-}
-
-
-.new_class {
-  border: 2px solid black;
-}
-
-.list_class {
-  border: 2px solid black;
-}
-
-.list_class td {
-  border: 1px solid black;
-  font-size: 25px;
-}
-
-
-.new_class td {
-  font-size: 25px;
-  background-color: silver;
+  justify-content: center;
 }
 
 .new_member_button {
@@ -165,12 +150,44 @@ select {
   height: 40px;
 }
 
+.new_class_page {
+  text-align: center;
+}
+
+.new_class {
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.new_class td {
+  font-size: 25px;
+  background-color: silver;
+}
+
 .new_class_button {
   font-size: 20px;
 }
 
+.list_class_page {
+  text-align: center;
+}
+
+.list_class {
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.list_class td {
+  border: 1px solid black;
+  font-size: 25px;
+}
+
 .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday, .empty{
   border: 1px solid black;
+}
+
+.empty {
+  background-color: black;
 }
 
 .premium {

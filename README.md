@@ -34,4 +34,7 @@ The gym could be able to give its members Premium or Standard membership. Standa
 
 The techonolgies I used for this project were:
 
+Ruby: plugins - Sinatra, Minitest, Pg
+SQL
+HTML and CSS
 
