@@ -1,6 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
+
 require_relative('../models/bookings.rb')
 require_relative('../models/classes.rb')
 require_relative('../models/members.rb')
