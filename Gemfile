@@ -3,5 +3,8 @@ ruby '2.4.1'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'bundler'
+gem 'mustermann'
+gem 'rack'
+gem 'rack-protection'
 
 gem 'pg', '~> 0.18'
