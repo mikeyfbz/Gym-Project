@@ -1,3 +1,3 @@
-web: bundle exec ruby main_controller.rb -p $PORT
+web: bundle exec ruby config.ru -p $PORT
 
 
